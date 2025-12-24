@@ -864,3 +864,26 @@ footer {
     background: var(--white);
     color: var(--dark-red);
 }
+/* Routine card images (3 pictures) */
+.routine-image {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-card);
+}
+
+.routine-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+}
+
+/* Subtle hover zoom when hovering the whole card */
+.routine-card:hover .routine-image img {
+    transform: scale(1.08);
+}
