@@ -1,0 +1,866 @@
+/* ===================================
+   Calisthenics Page - Red Theme
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #ff1a1a;
+    --dark-red: #b30000;
+    --darker-red: #990000;
+    --light-red: #ff4d4d;
+    --pale-red: #ff6666;
+    --gradient-main: linear-gradient(135deg, #ff1a1a, #b30000);
+    --gradient-hero: linear-gradient(135deg, #ff4d4d, #990000);
+    --gradient-section: linear-gradient(135deg, #cc0000, #ff3333);
+    --white: #ffffff;
+    --black: #000000;
+    --overlay-light: rgba(255, 255, 255, 0.1);
+    --overlay-dark: rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.5);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-main);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   Header
+   =================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--overlay-dark);
+    padding: 15px 50px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.page-hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.calisthenic-hero {
+    background: var(--gradient-hero);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(179, 0, 0, 0.7), rgba(153, 0, 0, 0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-glow);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ===================================
+   Section Header
+   =================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-shadow: var(--shadow-glow);
+}
+
+/* ===================================
+   About Section
+   =================================== */
+.about-section {
+    padding: 80px 20px;
+    background: var(--gradient-section);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.about-text .section-tag {
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: var(--shadow-glow);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* ===================================
+   Gallery Section
+   =================================== */
+.gallery-section {
+    padding: 80px 20px;
+    background: var(--overlay-dark);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 180px);
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h3 {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+}
+
+.gallery-overlay p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ===================================
+   Exercises Section
+   =================================== */
+.exercises-section {
+    padding: 80px 20px;
+    background: var(--gradient-main);
+}
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.exercise-card {
+    background: var(--overlay-light);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.exercise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.exercise-image {
+    height: 160px;
+    overflow: hidden;
+}
+
+.exercise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.exercise-card:hover .exercise-image img {
+    transform: scale(1.1);
+}
+
+.exercise-content {
+    padding: 20px;
+}
+
+.exercise-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.exercise-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.exercise-content ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exercise-content ul li {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* ===================================
+   Benefits Section
+   =================================== */
+.benefits-section {
+    padding: 80px 20px;
+    background: var(--gradient-hero);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.benefit-card {
+    background: var(--overlay-light);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   Equipment Section
+   =================================== */
+.equipment-section {
+    padding: 80px 20px;
+    background: var(--overlay-dark);
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.equipment-card {
+    background: var(--overlay-light);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.equipment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card);
+}
+
+.equipment-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.equipment-card:hover .equipment-image img {
+    transform: scale(1.1);
+}
+
+.equipment-card h3 {
+    font-size: 1.1rem;
+    padding: 15px 15px 5px;
+}
+
+.equipment-card p {
+    font-size: 0.85rem;
+    padding: 0 15px 20px;
+    opacity: 0.8;
+}
+
+/* ===================================
+   Progression Section
+   =================================== */
+.progression-section {
+    padding: 80px 20px;
+    background: var(--gradient-section);
+}
+
+.progression-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.progression-card {
+    background: var(--overlay-light);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.progression-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-card);
+}
+
+.progression-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.progression-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.progression-content {
+    padding: 25px;
+}
+
+.level-tag {
+    display: inline-block;
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.progression-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.progression-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.progression-content ul {
+    list-style: none;
+}
+
+.progression-content ul li {
+    padding: 5px 0;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    padding-left: 20px;
+    position: relative;
+}
+
+.progression-content ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+}
+
+/* ===================================
+   Routine Section
+   =================================== */
+.routine-section {
+    padding: 80px 20px;
+    background: var(--gradient-main);
+}
+
+.routine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.routine-card {
+    background: var(--overlay-light);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.routine-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.routine-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.routine-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.routine-exercise {
+    font-weight: 500;
+}
+
+.routine-reps {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===================================
+   CTA Section
+   =================================== */
+.cta-section {
+    padding: 80px 20px;
+    background: var(--gradient-hero);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-glow);
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--white);
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--dark-red);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 1024px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .exercise-grid,
+    .benefits-grid,
+    .progression-grid,
+    .routine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .exercise-grid,
+    .benefits-grid,
+    .progression-grid,
+    .routine-grid,
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item.large {
+        grid-column: span 1;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .about-text h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ===================================
+   Scrollbar
+   =================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-red);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-red);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white);
+}
+
+::selection {
+    background: var(--white);
+    color: var(--dark-red);
+}

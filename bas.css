@@ -1,0 +1,1019 @@
+/* ===================================
+   Basketball Page - Red Theme
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #ff1a1a;
+    --dark-red: #b30000;
+    --darker-red: #990000;
+    --light-red: #ff4d4d;
+    --gradient-main: linear-gradient(135deg, #ff1a1a, #b30000);
+    --gradient-hero: linear-gradient(135deg, #ff4d4d, #990000);
+    --gradient-section: linear-gradient(135deg, #cc0000, #ff3333);
+    --white: #ffffff;
+    --overlay-light: rgba(255, 255, 255, 0.1);
+    --overlay-dark: rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.5);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-main);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   Header
+   =================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--overlay-dark);
+    padding: 15px 50px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    opacity: 0.9;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 15px;
+    text-shadow: var(--shadow-glow);
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ===================================
+   Section Styles
+   =================================== */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    text-shadow: var(--shadow-glow);
+}
+
+/* ===================================
+   About Section
+   =================================== */
+.about-section {
+    padding: 80px 20px;
+    background: var(--gradient-section);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.about-text .section-tag {
+    margin-bottom: 10px;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: var(--shadow-glow);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* ===================================
+   Gallery Section
+   =================================== */
+.gallery-section {
+    padding: 80px 20px;
+    background: var(--overlay-dark);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ===================================
+   Reasons Section
+   =================================== */
+.reasons-section {
+    padding: 80px 20px;
+    background: var(--gradient-main);
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.reason-card {
+    background: var(--overlay-light);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.reason-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.reason-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.reason-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   My Photos Section
+   =================================== */
+.my-photos-section {
+    padding: 80px 20px;
+    background: var(--gradient-hero);
+}
+
+.my-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.my-photo-card {
+    text-align: center;
+}
+
+.photo-frame {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.my-photo-card:hover .photo-frame img {
+    transform: scale(1.05);
+}
+
+.my-photo-card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   Skills Section
+   =================================== */
+.skills-section {
+    padding: 80px 20px;
+    background: var(--gradient-section);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--overlay-light);
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ===================================
+   Equipment Section
+   =================================== */
+.equipment-section {
+    padding: 80px 20px;
+    background: var(--overlay-dark);
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.equipment-card {
+    background: var(--overlay-light);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+}
+
+.equipment-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.equipment-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.equipment-card:hover .equipment-img img {
+    transform: scale(1.1);
+}
+
+.equipment-card h3 {
+    font-size: 1.1rem;
+    padding: 20px 15px 5px;
+}
+
+.equipment-card p {
+    font-size: 0.9rem;
+    padding: 0 15px 20px;
+    opacity: 0.85;
+}
+
+/* ===================================
+   Player Section
+   =================================== */
+.player-section {
+    padding: 80px 20px;
+    background: var(--gradient-main);
+}
+
+.player-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.player-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.player-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.player-text .section-tag {
+    margin-bottom: 10px;
+}
+
+.player-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: var(--shadow-glow);
+}
+
+.player-text p {
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* ===================================
+   CTA Section
+   =================================== */
+.cta-section {
+    padding: 60px 20px;
+    background: var(--gradient-hero);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-shadow: var(--shadow-glow);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--white);
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--dark-red);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ===================================
+   Responsive
+   =================================== */
+@media (max-width: 1024px) {
+    .about-grid,
+    .player-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .gallery-grid,
+    .reasons-grid,
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .my-photos-grid,
+    .equipment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        height: auto;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .gallery-grid,
+    .reasons-grid,
+    .skills-grid,
+    .my-photos-grid,
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-text h2,
+    .player-text h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ===================================
+   Scrollbar
+   =================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-red);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-red);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white);
+}
+
+::selection {
+    background: var(--white);
+    color: var(--dark-red);
+}
+/* ===================================
+   Favorite Players - Mosaic Lineup
+   =================================== */
+
+.players-section {
+    padding: 80px 20px;
+    /* subtle light highlight behind the cards */
+    background:
+        radial-gradient(140% 200% at top, rgba(255, 255, 255, 0.08), transparent),
+        var(--overlay-dark);
+}
+
+.players-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    grid-template-areas:
+        "one one two two"
+        "one one three three"
+        "four four five five";
+    gap: 22px;
+}
+
+/* Base card styles */
+
+.players-section .player-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.14),
+        rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    display: flex;
+    gap: 14px;
+    padding: 14px 14px 16px;
+    backdrop-filter: blur(14px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glow border on hover */
+.players-section .player-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 180deg,
+        rgba(255, 255, 255, 0.0),
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.0)
+    );
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.players-section .player-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.players-section .player-card:hover::before {
+    opacity: 1;
+}
+
+/* Grid areas for the 5 cards */
+
+.players-section .player-1 { grid-area: one; }
+.players-section .player-2 { grid-area: two; }
+.players-section .player-3 { grid-area: three; }
+.players-section .player-4 { grid-area: four; }
+.players-section .player-5 { grid-area: five; }
+
+/* Media (image) part */
+
+.players-section .player-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Bigger featured media for #1 */
+.players-section .player-1 .player-media {
+    flex: 1.25;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+}
+
+/* Slightly taller ratio for the rest */
+.players-section .player-media:not(.player-1 .player-media) {
+    width: 42%;
+    min-width: 0;
+    aspect-ratio: 4 / 5;
+}
+
+/* Fallback for non-#1 cards */
+.players-section .player-2 .player-media,
+.players-section .player-3 .player-media,
+.players-section .player-4 .player-media,
+.players-section .player-5 .player-media {
+    width: 42%;
+}
+
+.players-section .player-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.03);
+    transition: transform 0.4s ease;
+}
+
+.players-section .player-card:hover .player-media img {
+    transform: scale(1.08);
+}
+
+/* Info part */
+
+.players-section .player-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* More space for featured player text */
+.players-section .player-1 .player-meta {
+    padding: 4px 4px 4px 6px;
+}
+
+.players-section .player-meta h3 {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.players-section .player-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.players-section .player-team-tag,
+.players-section .player-role-tag {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.players-section .player-team-tag {
+    font-weight: 600;
+}
+
+.players-section .player-role-tag {
+    opacity: 0.9;
+}
+
+.players-section .player-meta p {
+    font-size: 0.9rem;
+    opacity: 0.93;
+    line-height: 1.6;
+}
+
+/* Rank and jersey badges */
+
+.players-section .player-rank-badge,
+.players-section .player-jersey-badge {
+    position: absolute;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 11px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Rank (top-left) */
+.players-section .player-rank-badge {
+    top: 8px;
+    left: 8px;
+    letter-spacing: 1px;
+}
+
+/* Jersey (bottom-right) */
+.players-section .player-jersey-badge {
+    bottom: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--dark-red);
+}
+
+/* Medal colors for ranks */
+.players-section .player-1 .player-rank-badge {
+    background: linear-gradient(135deg, #ffd700, #ffb100);
+    color: #5b3b00;
+}
+
+.players-section .player-2 .player-rank-badge {
+    background: linear-gradient(135deg, #e0e0e0, #b0b0b0);
+    color: #222;
+}
+
+.players-section .player-3 .player-rank-badge {
+    background: linear-gradient(135deg, #ffb347, #ff7f50);
+    color: #3d2000;
+}
+
+.players-section .player-4 .player-rank-badge,
+.players-section .player-5 .player-rank-badge {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(220, 220, 220, 0.9));
+    color: #222;
+}
+
+/* ===================================
+   Responsive for players section
+   =================================== */
+
+@media (max-width: 1024px) {
+    .players-mosaic {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        grid-template-areas:
+            "one one"
+            "two three"
+            "four five";
+    }
+
+    .players-section .player-card {
+        padding: 14px;
+    }
+
+    .players-section .player-media:not(.player-1 .player-media) {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .players-section {
+        padding: 70px 16px;
+    }
+
+    .players-mosaic {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four"
+            "five";
+    }
+
+    .players-section .player-card {
+        flex-direction: row;
+        min-height: 0;
+    }
+
+    .players-section .player-1 .player-media {
+        aspect-ratio: 4 / 3;
+        width: 45%;
+    }
+
+    .players-section .player-media:not(.player-1 .player-media) {
+        width: 38%;
+    }
+}
+
+@media (max-width: 520px) {
+    .players-section .player-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 12px 14px;
+    }
+
+    .players-section .player-media,
+    .players-section .player-1 .player-media {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+
+    .players-section .player-meta {
+        padding-top: 6px;
+    }
+}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Hobby</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">⭐ My Hobby</div>
+    <nav>
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="physics.html">Physics</a></li>
+            <li><a href="basketball.html">Basketball</a></li>
+            <li><a href="caslis.html">Calisthenics</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+    <div class="hero-particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge">WELCOME TO MY WORLD</div>
+        <h1>What I Do in My Free Time</h1>
+        <p>My life, my rules. Every moment is a chance to improve, learn, and enjoy the things I love most.</p>
+        <div class="hero-buttons">
+            <button class="glow-button" id="learnMoreBtn">Learn More</button>
+            <a href="#hobbies" class="outline-button">Explore Hobbies ↓</a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span></span>
+    </div>
+</section>
+
+<!-- Hobbies Section -->
+<section id="hobbies" class="hobbies-section">
+    <div class="section-header">
+        <span class="section-tag">DISCOVER</span>
+        <h2>🏠 My Hobbies at Home</h2>
+        <p>Click on any card to explore more about each hobby</p>
+    </div>
+    <ul class="hobbies-list">
+        <li class="hobby-item" onclick="window.location.href='basketball.html'">
+            <div class="hobby-glow"></div>
+            <span class="hobby-number">1</span>
+            <span class="hobby-icon">🏀</span>
+            <h3>Basketball</h3>
+            <p>Playing basketball keeps me active, improves my coordination, and teaches me teamwork and discipline.</p>
+            <div class="hobby-tags">
+                <span>Sport</span>
+                <span>Fitness</span>
+                <span>Team</span>
+            </div>
+            <span class="click-hint">Click to explore →</span>
+        </li>
+        <li class="hobby-item" onclick="window.location.href='physics.html'">
+            <div class="hobby-glow"></div>
+            <span class="hobby-number">2</span>
+            <span class="hobby-icon">📚</span>
+            <h3>Physics Study</h3>
+            <p>Studying physics helps me understand how the world works and improves my problem-solving skills.</p>
+            <div class="hobby-tags">
+                <span>Science</span>
+                <span>Learning</span>
+                <span>Logic</span>
+            </div>
+            <span class="click-hint">Click to explore →</span>
+        </li>
+        <li class="hobby-item" onclick="window.location.href='caslis.html'">
+            <div class="hobby-glow"></div>
+            <span class="hobby-number">3</span>
+            <span class="hobby-icon">💪</span>
+            <h3>Calisthenics</h3>
+            <p>Bodyweight training builds strength, flexibility, and endurance without needing any equipment.</p>
+            <div class="hobby-tags">
+                <span>Exercise</span>
+                <span>Strength</span>
+                <span>Health</span>
+            </div>
+            <span class="click-hint">Click to explore →</span>
+        </li>
+    </ul>
+</section>
+
+<!-- Popup Modal -->
+<div class="popup-overlay" id="popup">
+    <div class="popup-content">
+        <div class="popup-icon">🎯</div>
+        <h2>Discover More About My Hobbies!</h2>
+        <p>Explore how basketball, physics, and calisthenics shape my daily life and help me grow.</p>
+        <div class="popup-buttons">
+            <button id="popupBtn" class="popup-primary">Go to Physics Page</button>
+            <button id="closePopup" class="popup-secondary">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="about-container">
+        <div class="about-text">
+            <span class="section-tag">MY PASSION</span>
+            <h2>Why I Love Basketball</h2>
+            <p>Basketball challenges my speed, skill, teamwork, and focus. Practicing shooting, dribbling, footwork, and strategy daily helps me grow both physically and mentally.</p>
+            <p>It teaches discipline, patience, perseverance, and decision-making under pressure. Tracking my progress allows me to celebrate small victories and stay motivated.</p>
+            <a href="basketball.html" class="learn-more-link">Learn More About Basketball →</a>
+        </div>
+        <div class="about-image">
+            <div class="image-frame">
+                <img src="kyrie.jpg" alt="Kyrie Irving" id="k">
+                <div class="image-overlay">
+                    <span>My Inspiration</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Physics Study Section -->
+<section id="physics" class="features">
+    <div class="section-header">
+        <span class="section-tag">ACADEMIC INTEREST</span>
+        <h2>📚 Topics I Study in Physics</h2>
+    </div>
+
+    <!-- NEW: Physics hobby photo -->
+    <div class="hobby-photo physics-photo">
+        <!-- Change "physics-home.jpg" to your own image file -->
+        <img src="iiii.jpg" alt="Me studying physics">
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">⚛️</div>
+            <h3>Quantum Mechanics</h3>
+            <p>Exploring the strange behavior of particles at the atomic and subatomic level fascinates me.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌌</div>
+            <h3>Astrophysics</h3>
+            <p>Learning about black holes, stars, galaxies, and the mysteries of the universe.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Electromagnetism</h3>
+            <p>Understanding electric and magnetic fields and how they interact with matter.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3>Thermodynamics</h3>
+            <p>Studying heat, energy transfer, and the laws that govern physical systems.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📐</div>
+            <h3>Classical Mechanics</h3>
+            <p>Newton's laws, motion, forces, and the foundation of all physics concepts.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌊</div>
+            <h3>Waves & Optics</h3>
+            <p>How light and sound travel, reflect, refract, and create the world we perceive.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Calisthenics Section -->
+<section id="calisthenics" class="features">
+    <div class="section-header">
+        <span class="section-tag">BODYWEIGHT TRAINING</span>
+        <h2>💪 My Calisthenics Journey</h2>
+    </div>
+
+    <!-- NEW: Calisthenics hobby photo -->
+    <div class="hobby-photo calisthenics-photo">
+        <!-- Change "calisthenics-home.jpg" to your own image file -->
+        <img src="mm.jpg" alt="Me doing calisthenics">
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🤸</div>
+            <h3>Pull-ups & Chin-ups</h3>
+            <p>Building back and bicep strength through various grip positions and progressions.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💪</div>
+            <h3>Push-up Variations</h3>
+            <p>From regular push-ups to diamond, archer, and one-arm progressions for chest and triceps.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🦵</div>
+            <h3>Squats & Lunges</h3>
+            <p>Developing leg strength and balance with pistol squat progressions and jump variations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🧘</div>
+            <h3>Core Training</h3>
+            <p>Planks, leg raises, and L-sits to build a strong and stable core foundation.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏋️</div>
+            <h3>Dips</h3>
+            <p>Parallel bar and ring dips for tricep and chest development.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤾</div>
+            <h3>Skill Moves</h3>
+            <p>Working towards muscle-ups, handstands, and front/back levers as long-term goals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">⭐ My Hobby Project</div>
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="physics.html">Physics</a>
+            <a href="basketball.html">Basketball</a>
+            <a href="caslis.html">Calisthenics</a>
+        </div>
+        <p class="footer-copyright">© 2025 My Favorite Hobby Project</p>
+    </div>
+</footer>
+
+<script>
+    // Popup functionality
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    const popup = document.getElementById('popup');
+    const popupBtn = document.getElementById('popupBtn');
+    const closePopup = document.getElementById('closePopup');
+
+    learnMoreBtn.addEventListener('click', () => {
+        popup.style.display = 'flex';
+    });
+
+    popupBtn.addEventListener('click', () => {
+        window.location.href = 'physics.html';
+    });
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav ul');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,925 @@
+/* ===================================
+   CSS Reset & Variables
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #ff1a1a;
+    --dark-red: #b30000;
+    --darker-red: #990000;
+    --light-red: #ff4d4d;
+    --pale-red: #ff6666;
+    --gradient-main: linear-gradient(135deg, #ff1a1a, #b30000);
+    --gradient-hero: linear-gradient(135deg, #ff4d4d, #990000);
+    --gradient-section: linear-gradient(135deg, #cc0000, #ff3333);
+    --white: #ffffff;
+    --black: #000000;
+    --overlay-light: rgba(255, 255, 255, 0.1);
+    --overlay-dark: rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.5);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-main);
+    color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   Header & Navigation
+   =================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--overlay-dark);
+    padding: 15px 50px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-animation {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+}
+
+.atom {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.nucleus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.electron {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+.electron::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--white);
+    border-radius: 50%;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.electron-1 { animation-duration: 2s; }
+.electron-2 { transform: rotate(60deg); animation-duration: 2.5s; }
+.electron-3 { transform: rotate(120deg); animation-duration: 3s; }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--dark-red);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-glow);
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   Section Styles
+   =================================== */
+.section-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.section-header p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+.section-header.light {
+    color: var(--white);
+}
+
+/* ===================================
+   About Section
+   =================================== */
+.about-section {
+    padding: 100px 20px;
+    background: var(--overlay-light);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--gradient-main);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.about-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.mini-stat {
+    text-align: center;
+}
+
+.mini-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.mini-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===================================
+   Hobby & Learning Sections
+   =================================== */
+.hobby-section,
+.learning-section {
+    padding: 100px 20px;
+}
+
+.hobby-section {
+    background: var(--gradient-section);
+}
+
+.hobby-grid,
+.learning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hobby-text h2,
+.learning-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+.hobby-text p,
+.learning-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hobby-image,
+.learning-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.hobby-image img,
+.learning-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hobby-image:hover img,
+.learning-image:hover img {
+    transform: scale(1.05);
+}
+
+.learning-list {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.learning-list li {
+    padding: 10px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===================================
+   Areas Section (Timeline)
+   =================================== */
+.areas-section {
+    padding: 100px 20px;
+    background: var(--overlay-dark);
+}
+
+.areas-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.areas-timeline::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--light-red);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--overlay-light);
+    padding: 25px 30px;
+    border-radius: 15px;
+    flex: 1;
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+/* ===================================
+   Game Section
+   =================================== */
+.game-section {
+    padding: 100px 20px;
+    background: var(--gradient-hero);
+}
+
+.game-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.game-info {
+    background: var(--overlay-light);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.game-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.game-info p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.game-info ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.game-info ul li {
+    padding: 8px 0;
+    font-size: 1rem;
+}
+
+.game-container {
+    background: var(--overlay-dark);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.game-description {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.game-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+}
+
+.game-btn.start {
+    background: #4caf50;
+    color: white;
+}
+
+.game-btn.stop {
+    background: #ff9800;
+    color: white;
+}
+
+.game-btn.reset {
+    background: #f44336;
+    color: white;
+}
+
+.game-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.score-display {
+    margin-bottom: 20px;
+}
+
+.score-label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.score-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffd700;
+}
+
+.game-area {
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#fallingObject {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#fallingObject:hover {
+    transform: scale(1.1);
+}
+
+.game-status {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   Physicists Section
+   =================================== */
+.physicists-section {
+    padding: 100px 20px;
+    background: var(--overlay-light);
+}
+
+.physicists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.physicist-card {
+    background: var(--overlay-dark);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.physicist-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--white);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.physicist-avatar {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.physicist-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.physicist-years {
+    color: var(--light-red);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.physicist-card p:last-child {
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   Quote Section
+   =================================== */
+.quote-section {
+    padding: 80px 20px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.quote-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-icon {
+    font-size: 5rem;
+    color: var(--light-red);
+    line-height: 0.5;
+    opacity: 0.5;
+}
+
+blockquote {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-style: italic;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+cite {
+    color: var(--light-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   CTA Section
+   =================================== */
+.cta-section {
+    padding: 80px 20px;
+    background: var(--gradient-main);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--dark-red);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--dark-red);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px 20px;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 992px) {
+    .about-grid,
+    .hobby-grid,
+    .learning-grid,
+    .game-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image,
+    .hobby-image,
+    .learning-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .areas-timeline::before {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-area {
+        height: 250px;
+    }
+
+    #fallingObject {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ===================================
+   Scrollbar & Selection
+   =================================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--darker-red);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-red);
+    border-radius: 5px;
+}
+
+::selection {
+    background: var(--white);
+    color: var(--dark-red);
+}
